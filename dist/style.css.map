@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAIE,6CACC","file":"style.css","sourceRoot":"../src","sourcesContent":[".wp-block-imath-bout-de-code {\n\n\t.gist {\n\n\t\t.blob-num {\n\t\t\tborder: none;\n\t\t}\n\t}\n}\n"]}

@@ -1,0 +1,31 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bout de Code\n"
+"Report-Msgid-Bugs-To: https://github.com/imath/bout-de-code/issues\n"
+"Last-Translator: imath <contact@imathi.eu>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-12-29T20:20:48+00:00\n"
+"PO-Revision-Date: 2020-12-29 21:28+0100\n"
+"Language: en_US\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Domain: bout-de-code\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/imath/bout-de-code/"
+msgstr "https://github.com/imath/bout-de-code/"
+
+#. Description of the plugin
+msgid "Embarque des bouts de code hébergés sur Gist.GitHub.com dans vos publications."
+msgstr "Embed your Gists from Gist.GitHub.com into your WordPress posts."
+
+#. Author of the plugin
+msgid "imath"
+msgstr "imath"
+
+#. Author URI of the plugin
+msgid "https://imathi.eu"
+msgstr "https://imathi.eu"

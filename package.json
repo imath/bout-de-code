@@ -1,0 +1,40 @@
+{
+	"author": "imath",
+	"bugs": {
+		"url": "https://github.com/imath/bout-de-code/issues"
+	},
+	"description": "Embed your Gists from Gist.GitHub.com into your WordPress posts.",
+	"devDependencies": {
+		"@babel/core": "^7.12.10",
+		"@wordpress/babel-preset-default": "^4.20.0",
+		"@wordpress/scripts": "^12.6.0",
+		"parcel-bundler": "^1.12.4",
+		"sass": "^1.30.0"
+	},
+	"engines": {
+		"node": "14.15.3",
+		"npm": "6.14.9"
+	},
+	"scripts": {
+		"start": "parcel watch src/*",
+		"build": "parcel build src/*",
+		"pot": "wp i18n make-pot . languages/bout-de-code.pot --domain='bout-de-code' --include=\"dist/*,index.php\" --exclude=\".git,src,node_modules,languages,vendor,.cache\" --headers='{\"Project-Id-Version\": \"Bout de Code\", \"Report-Msgid-Bugs-To\": \"https://github.com/imath/bout-de-code/issues\", \"Last-Translator\": \"imath <contact@imathi.eu>\"}'",
+		"po2json": "wp i18n make-json languages",
+		"lint:scss": "wp-scripts lint-style 'src/*.scss'",
+		"lint:js": "wp-scripts lint-js './src'",
+		"package": "./bin/build-block-zip.sh"
+	},
+	"keywords": [
+		"gist",
+		"code",
+		"embed"
+	],
+	"homepage": "https://github.com/imath/bout-de-code",
+	"license": "GPL-2.0+",
+	"name": "bout-de-code",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/imath/bout-de-code.git"
+	},
+	"version": "1.0.0"
+}

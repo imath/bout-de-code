@@ -1,0 +1,30 @@
+{
+    "name": "Bout de Code",
+    "author": "imath",
+    "github_url": "https://github.com/imath/bout-de-code.git",
+    "version": "1.0.0",
+	"block_id": "imath/bout-de-code",
+	"php_relative_path": "index.php",
+    "editor_script": {
+        "handle": "bout-de-code-block",
+        "relative_path"  : "dist/index.js",
+        "dependencies": [
+            "wp-blocks",
+			"wp-element",
+			"wp-i18n",
+			"wp-components",
+			"wp-block-editor",
+			"wp-data",
+			"wp-compose"
+        ]
+    },
+    "style": {
+        "handle": "bout-de-code-style",
+        "relative_path"  : "dist/style.css",
+        "dependencies": []
+    },
+    "translations": {
+        "text_domain": "bout-de-code",
+        "domain_path": "languages/"
+    }
+}
