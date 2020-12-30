@@ -189,7 +189,8 @@ const EditBoutDeCode = ( {
 
 	return (
 		<Fragment>
-			{ ! isEditingURL && editToolbar && sidebarSettings }
+			{ ! isEditingURL && editToolbar }
+			{ ! isEditingURL && sidebarSettings }
 			<figure className={ classNames }>
 				<div className="wp-block-embed__wrapper">
 					<SandBox
