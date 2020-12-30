@@ -43,34 +43,6 @@ fi
 status "Cleaning working directory..."
 git clean -xdf
 
-# Run the build
-status "Installing dependencies..."
-npm install
-composer install
-
-# WPCS
-status "Checking PHP Code Standards..."
-composer run lint:wpcs
-
-# Lint PHP
-status "Checking PHP Code..."
-composer run lint:php
-
-# Checking PHP
-status "Checking PHP Compatibility..."
-composer run phpcompat
-
-# Checking SCSS
-status "Checking SCSS..."
-npm run lint:scss
-
-# Checking JavaScript
-status "Checking JavaScript..."
-npm run lint:js
-
-status "Generating build..."
-npm run build
-
 # Remove any existing zip file
 rm -f bout-de-code.zip
 
