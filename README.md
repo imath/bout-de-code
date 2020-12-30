@@ -4,7 +4,7 @@
 
 _Je suis un bloc WordPress inscrit sur l'[Entrepôt](https://github.com/imath/entrepot) !_
 
-![capture écran](https://i.imgur.com/hWaXF5o.png)
+![capture écran](https://i.imgur.com/0PZ1tYY.png)
 
 « Bout de Code » est un bloc WordPress pour vous permettre d'embarquer dans vos publications des bouts de code hébergés sur [Gist.GitHub.com](https://gist.github.com).
 
@@ -14,7 +14,7 @@ _Je suis un bloc WordPress inscrit sur l'[Entrepôt](https://github.com/imath/en
 
 _I am a WordPress block registered into the [Entrepôt](https://github.com/imath/entrepot) !_
 
-![screenshot](https://i.imgur.com/OMQb84r.png)
+![screenshot](https://i.imgur.com/InzcGLN.png)
 
 "Bout de Code" is a WordPress block letting you embed snippets of code hosted on [Gist.GitHub.com](https://gist.github.com) into your posts or pages.
 
