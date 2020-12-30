@@ -120,8 +120,13 @@ function bout_de_code_embed_response( $response, $args, $url ) { // phpcs:ignore
 
 	$response['body'] = wp_json_encode(
 		array(
-			'url'             => $url,
-			'is_bout_de_code' => true,
+			'url'          => $url,
+			'isBoutDeCode' => true,
+			'iframeStyle'  => str_replace(
+				'.wp-block-imath-bout-de-code.use-dark-mode',
+				'html.use-dark-mode body',
+				file_get_contents( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'dist/style.css' )
+			),
 		)
 	);
 

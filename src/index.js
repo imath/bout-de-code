@@ -33,9 +33,14 @@ registerBlockType( 'imath/bout-de-code', {
 			source: 'html',
 			selector: 'figcaption',
 		},
+		useDarkMode: {
+			type: 'boolean',
+			default: false,
+		},
 	},
 	supports: {
 		align: true,
+		anchor: true,
 	},
 	edit: EditBoutDeCodeBlock,
 	save: SaveBoutDeCode,

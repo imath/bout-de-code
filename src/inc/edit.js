@@ -2,10 +2,11 @@
  * WordPress dependencies.
  */
 const {
-	blockEditor: { RichText, BlockControls },
+	blockEditor: { InspectorControls, RichText, BlockControls },
 	components: {
 		Placeholder,
-		Disabled,
+		PanelBody,
+		ToggleControl,
 		SandBox,
 		Button,
 		ExternalLink,
@@ -20,6 +21,7 @@ const {
 		createElement,
 		Fragment,
 		useState,
+		useEffect,
 	},
 	i18n: { __ },
 } = wp;
@@ -36,10 +38,24 @@ const EditBoutDeCode = ( {
 	preview,
 	fetching,
 } ) => {
-	const { url, caption } = attributes;
+	const { url, caption, useDarkMode } = attributes;
 	const label = __( 'Bout de Code', 'bout-de-code' );
 	const [ value, setURL ] = useState( url );
 	const [ isEditingURL, setIsEditingURL ] = useState( ! url );
+	const [ isSettingMode, setIsSettingMode ] = useState( false );
+
+	// Makes sure the Sandbox is updated according to the Dark mode attribute.
+	useEffect( () => {
+		if ( isSettingMode ) {
+			setIsSettingMode( false );
+		}
+	}, [ isSettingMode ] );
+
+	const setMode = () => {
+		setIsSettingMode( true );
+
+		setAttributes( { useDarkMode: ! useDarkMode } );
+	};
 
 	const onSubmit = ( event ) => {
 		if ( event ) {
@@ -116,7 +132,7 @@ const EditBoutDeCode = ( {
 		);
 	}
 
-	if ( fetching ) {
+	if ( fetching || isSettingMode ) {
 		return (
 			<div className="wp-block-embed is-loading">
 				<Spinner />
@@ -125,7 +141,12 @@ const EditBoutDeCode = ( {
 		);
 	}
 
-	if ( ! preview || ! preview.url || ! preview.is_bout_de_code ) {
+	if (
+		! preview ||
+		! preview.url ||
+		! preview.isBoutDeCode ||
+		! preview.iframeStyle
+	) {
 		return (
 			<Fragment>
 				{ editToolbar }
@@ -141,14 +162,41 @@ const EditBoutDeCode = ( {
 		);
 	}
 
+	const sidebarSettings = (
+		<InspectorControls>
+			<PanelBody
+				title={ __( 'Réglages', 'bout-de-code' ) }
+				initialOpen={ true }
+			>
+				<ToggleControl
+					label={ __( 'Utiliser le mode sombre', 'bout-de-code' ) }
+					checked={ !! useDarkMode }
+					onChange={ () => setMode() }
+					help={
+						useDarkMode
+							? __( 'Mode sombre activé.', 'bout-de-code' )
+							: __( 'Basculer en mode sombre.', 'bout-de-code' )
+					}
+				/>
+			</PanelBody>
+		</InspectorControls>
+	);
+
+	let classNames = 'wp-block-embed .wp-block-imath-bout-de-code';
+	if ( useDarkMode ) {
+		classNames += ' use-dark-mode';
+	}
+
 	return (
 		<Fragment>
-			{ ! isEditingURL && editToolbar }
-			<figure className="wp-block-embed is-bout-de-code">
+			{ ! isEditingURL && editToolbar && sidebarSettings }
+			<figure className={ classNames }>
 				<div className="wp-block-embed__wrapper">
-					<Disabled>
-						<SandBox scripts={ [ preview.url ] } />
-					</Disabled>
+					<SandBox
+						type={ useDarkMode ? 'use-dark-mode' : '' }
+						scripts={ [ preview.url ] }
+						styles={ [ preview.iframeStyle ] }
+					/>
 				</div>
 				{ ( ! RichText.isEmpty( caption ) || isSelected ) && (
 					<RichText
