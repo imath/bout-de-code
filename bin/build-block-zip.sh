@@ -31,9 +31,9 @@ if [ ! -z "$changed" ]; then
 fi
 
 branch="$(git rev-parse --abbrev-ref HEAD)"
-if [ "$branch" != 'master' ]; then
+if [ "$branch" != 'trunk' ]; then
 	echo "WARNING: You should probably be running this script against the"
-	echo "         'master' branch (current: '$branch')"
+	echo "         'trunk' branch (current: '$branch')"
 	echo
 	sleep 2
 fi
@@ -41,7 +41,7 @@ fi
 # Remove ignored files to reset repository to pristine condition. Previous test
 # ensures that changed files abort the plugin build.
 status "Cleaning working directory..."
-git clean -xdf
+git clean -df
 
 # Remove any existing zip file
 rm -f bout-de-code.zip
