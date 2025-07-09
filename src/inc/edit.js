@@ -1,30 +1,29 @@
 /**
- * WordPress dependencies.
+ * WP dependencies.
  */
-const {
-	blockEditor: { InspectorControls, RichText, BlockControls },
-	components: {
-		Placeholder,
-		PanelBody,
-		ToggleControl,
-		SandBox,
-		Button,
-		ExternalLink,
-		Spinner,
-		ToolbarGroup,
-		ToolbarButton,
-	},
-	compose: { compose },
-	data: { withSelect },
-	element: {
-		/* eslint-disable no-unused-vars */
-		createElement,
-		Fragment,
-		useState,
-		useEffect,
-	},
-	i18n: { __ },
-} = wp;
+import {
+	InspectorControls,
+	RichText,
+	BlockControls,
+	useBlockProps,
+} from '@wordpress/block-editor';
+import {
+	Placeholder,
+	PanelBody,
+	ToggleControl,
+	SandBox,
+	Button,
+	Spinner,
+	ToolbarGroup,
+	ToolbarButton,
+} from '@wordpress/components';
+import { compose } from '@wordpress/compose';
+import { withSelect } from '@wordpress/data';
+import {
+	useState,
+	useEffect,
+} from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Internal dependencies.
@@ -38,6 +37,7 @@ const EditBoutDeCode = ( {
 	preview,
 	fetching,
 } ) => {
+	const blockProps = useBlockProps();
 	const { url, caption, useDarkMode } = attributes;
 	const label = __( 'Bout de Code', 'bout-de-code' );
 	const [ value, setURL ] = useState( url );
@@ -80,7 +80,7 @@ const EditBoutDeCode = ( {
 				<ToolbarButton
 					icon="edit"
 					title={ __(
-						'Modifier l’URL du Bout de Code',
+						'Edit Gist URL',
 						'bout-de-code'
 					) }
 					onClick={ switchBackToURLInput }
@@ -91,52 +91,44 @@ const EditBoutDeCode = ( {
 
 	if ( isEditingURL ) {
 		return (
-			<Placeholder
-				icon={ IconBoutDeCode }
-				label={ label }
-				className="wp-block-embed"
-				instructions={ __(
-					'Collez l’URL du Gist que vous souhaitez embarquer dans votre publication.',
-					'bout-de-code'
-				) }
-			>
-				<form onSubmit={ onSubmit }>
-					<input
-						type="url"
-						value={ value || '' }
-						className="components-placeholder__input"
-						aria-label={ label }
-						placeholder={ __(
-							'Saisissez l’URL à embarquer…',
-							'bout-de-code'
-						) }
-						onChange={ ( event ) => setURL( event.target.value ) }
-					/>
-					<Button isPrimary type="submit">
-						{ __( 'Embarquer', 'bout-de-code' ) }
-					</Button>
-				</form>
-				<div className="components-placeholder__learn-more">
-					<ExternalLink
-						href={ __(
-							'https://wordpress.org/support/article/embeds/'
-						) }
-					>
-						{ __(
-							'En apprendre plus à propos des contenus embarqués',
-							'bout-de-code'
-						) }
-					</ExternalLink>
-				</div>
-			</Placeholder>
+			<div { ...blockProps }>
+				<Placeholder
+					icon={ IconBoutDeCode }
+					label={ label }
+					className="wp-block-embed"
+					instructions={ __(
+						'Paste the Gist.GitHub.com URL to embed into your post.',
+						'bout-de-code'
+					) }
+				>
+					<form onSubmit={ onSubmit }>
+						<input
+							type="url"
+							value={ value || '' }
+							className="components-placeholder__input"
+							aria-label={ label }
+							placeholder={ __(
+								'Paste the Gist URL to embed…',
+								'bout-de-code'
+							) }
+							onChange={ ( event ) => setURL( event.target.value ) }
+						/>
+						<Button variant="primary" type="submit">
+							{ __( 'Embed', 'bout-de-code' ) }
+						</Button>
+					</form>
+				</Placeholder>
+			</div>
 		);
 	}
 
 	if ( fetching || isSettingMode ) {
 		return (
-			<div className="wp-block-embed is-loading">
-				<Spinner />
-				<p>{ __( 'Chargement en cours…', 'bout-de-code' ) }</p>
+			<div { ...blockProps }>
+				<div className="wp-block-embed is-loading">
+					<Spinner />
+					<p>{ __( 'Loading Gist…', 'bout-de-code' ) }</p>
+				</div>
 			</div>
 		);
 	}
@@ -148,34 +140,34 @@ const EditBoutDeCode = ( {
 		! preview.iframeStyle
 	) {
 		return (
-			<Fragment>
+			<div { ...blockProps }>
 				{ editToolbar }
 				<Placeholder icon={ IconBoutDeCode } label={ label }>
 					<p className="components-placeholder__error">
 						{ __(
-							'L’URL que vous avez fournie n’est pas celle d’un bout de code hébergé sur Gist.GitHub.com.',
+							'The URL your provided is not about a code hosted on Gist.GitHub.com.',
 							'bout-de-code'
 						) }
 					</p>
 				</Placeholder>
-			</Fragment>
+			</div>
 		);
 	}
 
 	const sidebarSettings = (
 		<InspectorControls>
 			<PanelBody
-				title={ __( 'Réglages', 'bout-de-code' ) }
+				title={ __( 'Settings', 'bout-de-code' ) }
 				initialOpen={ true }
 			>
 				<ToggleControl
-					label={ __( 'Utiliser le mode sombre', 'bout-de-code' ) }
+					label={ __( 'Use dark mode', 'bout-de-code' ) }
 					checked={ !! useDarkMode }
 					onChange={ () => setMode() }
 					help={
 						useDarkMode
-							? __( 'Mode sombre activé.', 'bout-de-code' )
-							: __( 'Basculer en mode sombre.', 'bout-de-code' )
+							? __( 'Dark mode on', 'bout-de-code' )
+							: __( 'Switch to dark mode', 'bout-de-code' )
 					}
 				/>
 			</PanelBody>
@@ -188,7 +180,7 @@ const EditBoutDeCode = ( {
 	}
 
 	return (
-		<Fragment>
+		<div { ...blockProps }>
 			{ ! isEditingURL && editToolbar }
 			{ ! isEditingURL && sidebarSettings }
 			<figure className={ classNames }>
@@ -203,7 +195,7 @@ const EditBoutDeCode = ( {
 					<RichText
 						tagName="figcaption"
 						placeholder={ __(
-							'Rédigez la légende…',
+							'Write a caption…',
 							'bout-de-code'
 						) }
 						value={ caption }
@@ -214,7 +206,7 @@ const EditBoutDeCode = ( {
 					/>
 				) }
 			</figure>
-		</Fragment>
+		</div>
 	);
 };
 

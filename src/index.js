@@ -1,47 +1,20 @@
 /**
- * WordPress dependencies.
+ * WP dependencies.
  */
-const {
-	blocks: { registerBlockType },
-	/* eslint-disable no-unused-vars */
-	element: { createElement },
-	i18n: { __ },
-} = wp;
+import { registerBlockType } from '@wordpress/blocks';
 
 /**
  * Internal dependencies.
  */
+import './index.scss';
+import metadata from './block.json';
 import transforms from './inc/transforms';
 import EditBoutDeCodeBlock from './inc/edit';
 import SaveBoutDeCode from './inc/save';
 import IconBoutDeCode from './inc/icon';
 
-registerBlockType( 'imath/bout-de-code', {
-	title: __( 'Bout de Code', 'bout-de-code' ),
-	description: __(
-		'Embarque des bouts de code hébergés sur Gist.GitHub.com dans votre publication.',
-		'bout-de-code'
-	),
+registerBlockType( metadata, {
 	icon: IconBoutDeCode,
-	category: 'embed',
-	attributes: {
-		url: {
-			type: 'string',
-		},
-		caption: {
-			type: 'string',
-			source: 'html',
-			selector: 'figcaption',
-		},
-		useDarkMode: {
-			type: 'boolean',
-			default: false,
-		},
-	},
-	supports: {
-		align: true,
-		anchor: true,
-	},
 	edit: EditBoutDeCodeBlock,
 	save: SaveBoutDeCode,
 	transforms,

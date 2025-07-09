@@ -1,11 +1,7 @@
 /**
- * WordPress dependencies.
+ * WP dependencies.
  */
-const {
-	blockEditor: { RichText },
-	/* eslint-disable no-unused-vars */
-	element: { createElement },
-} = wp;
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 const SaveBoutDeCode = ( { attributes } ) => {
 	const { url, caption, useDarkMode } = attributes;
@@ -19,8 +15,12 @@ const SaveBoutDeCode = ( { attributes } ) => {
 		classNames += ' use-dark-mode';
 	}
 
+	const blockProps = useBlockProps.save( {
+		className: classNames,
+	} );
+
 	return (
-		<figure className={ classNames }>
+		<figure { ...blockProps }>
 			<div className="wp-block-embed__wrapper">
 				{ `\n${ url }\n` /* URL needs to be on its own line. */ }
 			</div>

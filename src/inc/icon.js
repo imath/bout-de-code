@@ -1,11 +1,11 @@
 /**
- * WordPress dependencies.
+ * WP dependencies.
  */
-const {
-	components: { SVG, G, Path },
-	/* eslint-disable no-unused-vars */
-	element: { createElement },
-} = wp;
+import {
+	SVG,
+	G,
+	Path,
+} from '@wordpress/components';
 
 const IconBoutDeCode = () => {
 	return (

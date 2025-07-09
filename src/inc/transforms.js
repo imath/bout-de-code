@@ -1,11 +1,7 @@
 /**
- * WordPress dependencies.
+ * WP dependencies.
  */
-const {
-	blocks: { createBlock },
-	/* eslint-disable no-unused-vars */
-	element: { createElement },
-} = wp;
+import { createBlock } from '@wordpress/blocks';
 
 /**
  * Transforms for Bout de Code (Gist) embeds.
