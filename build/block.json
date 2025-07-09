@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/retraceur/ressources/refs/heads/main/schemas/block.json",
+  "apiVersion": 3,
+  "name": "imath/bout-de-code",
+  "title": "Bout de Code",
+  "category": "embed",
+  "icon": "code",
+  "description": "Embed your Gists from Gist.GitHub.com into your Retraceur posts.",
+  "keywords": [
+    "Retraceur",
+    "code",
+    "gist",
+    "embed"
+  ],
+  "textdomain": "bout-de-code",
+  "version": "1.1.0",
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string",
+      "source": "html",
+      "selector": "figcaption"
+    },
+    "useDarkMode": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css"
+}
