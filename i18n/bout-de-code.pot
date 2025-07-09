@@ -1,0 +1,118 @@
+# Copyright (C) 2025 imath
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Bout de code 1.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/imath/bout-de-code/issues\n"
+"Last-Translator: imath <contact@imathi.eu>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-07-09T09:02:38+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: bout-de-code\n"
+
+#. Plugin Name of the plugin
+#: bout-de-code.php
+msgid "Bout de code"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: bout-de-code.php
+msgid "https://github.com/imath/bout-de-code"
+msgstr ""
+
+#. Description of the plugin
+#: bout-de-code.php
+msgid "Embed your Gists from Gist.GitHub.com into your Retraceur posts."
+msgstr ""
+
+#. Author of the plugin
+#: bout-de-code.php
+msgid "imath"
+msgstr ""
+
+#. Author URI of the plugin
+#: bout-de-code.php
+msgid "https://imathi.eu"
+msgstr ""
+
+#: build/index.js:1
+msgid "Bout de Code"
+msgstr ""
+
+#: build/index.js:1
+msgid "Edit Gist URL"
+msgstr ""
+
+#: build/index.js:1
+msgid "Paste the Gist.GitHub.com URL to embed into your post."
+msgstr ""
+
+#: build/index.js:1
+msgid "Paste the Gist URL to embed…"
+msgstr ""
+
+#: build/index.js:1
+msgid "Embed"
+msgstr ""
+
+#: build/index.js:1
+msgid "Loading Gist…"
+msgstr ""
+
+#: build/index.js:1
+msgid "The URL your provided is not about a code hosted on Gist.GitHub.com."
+msgstr ""
+
+#: build/index.js:1
+msgid "Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "Use dark mode"
+msgstr ""
+
+#: build/index.js:1
+msgid "Dark mode on"
+msgstr ""
+
+#: build/index.js:1
+msgid "Switch to dark mode"
+msgstr ""
+
+#: build/index.js:1
+msgid "Write a caption…"
+msgstr ""
+
+#: build/block.json
+msgctxt "block title"
+msgid "Bout de Code"
+msgstr ""
+
+#: build/block.json
+msgctxt "block description"
+msgid "Embed your Gists from Gist.GitHub.com into your Retraceur posts."
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "Retraceur"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "gist"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "embed"
+msgstr ""
