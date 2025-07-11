@@ -161,6 +161,7 @@ const EditBoutDeCode = ( {
 				initialOpen={ true }
 			>
 				<ToggleControl
+					__nextHasNoMarginBottom
 					label={ __( 'Use dark mode', 'bout-de-code' ) }
 					checked={ !! useDarkMode }
 					onChange={ () => setMode() }
