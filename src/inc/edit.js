@@ -97,7 +97,7 @@ const EditBoutDeCode = ( {
 					label={ label }
 					className="wp-block-embed"
 					instructions={ __(
-						'Paste the Gist.GitHub.com URL to embed into your post.',
+						'Paste the Gist.GitHub.com URL of the source code to embed into your post.',
 						'bout-de-code'
 					) }
 				>
@@ -127,7 +127,6 @@ const EditBoutDeCode = ( {
 			<div { ...blockProps }>
 				<div className="wp-block-embed is-loading">
 					<Spinner />
-					<p>{ __( 'Loading Gist…', 'bout-de-code' ) }</p>
 				</div>
 			</div>
 		);

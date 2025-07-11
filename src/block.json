@@ -28,5 +28,5 @@
 		"anchor": true
 	},
 	"editorScript": "file:./index.js",
-	"style": "file:./index.css"
+	"style": ["file:./index.css", "wp-block-embed-theme"]
 }
