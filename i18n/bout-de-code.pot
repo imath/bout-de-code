@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-09T09:02:38+00:00\n"
+"POT-Creation-Date: 2025-07-13T06:33:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: bout-de-code\n"
@@ -48,7 +48,7 @@ msgid "Edit Gist URL"
 msgstr ""
 
 #: build/index.js:1
-msgid "Paste the Gist.GitHub.com URL to embed into your post."
+msgid "Paste the Gist.GitHub.com URL of the source code to embed into your post."
 msgstr ""
 
 #: build/index.js:1
@@ -57,10 +57,6 @@ msgstr ""
 
 #: build/index.js:1
 msgid "Embed"
-msgstr ""
-
-#: build/index.js:1
-msgid "Loading Gist…"
 msgstr ""
 
 #: build/index.js:1
