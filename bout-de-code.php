@@ -77,7 +77,7 @@ function bout_de_code_register_embed_provider() {
 add_action( 'plugins_loaded', 'bout_de_code_register_embed_provider', 30 );
 
 /**
- * Customize the oembed url for Bout de Code.
+ * Customize the oembed url for Bout de code.
  *
  * @since  1.0.0
  *
@@ -149,12 +149,12 @@ function bout_de_code_embed_response( $response, $args, $url ) {
 }
 
 /**
- * Builds the src attribute of the Bout de Code to embed.
+ * Builds the src attribute of the Bout de code to embed.
  *
  * @since 1.0.0
  *
  * @param  array $matches Results of the URL regex.
- * @return string The `src` attribute of the Bout de Code to embed.
+ * @return string The `src` attribute of the Bout de code to embed.
  */
 function bout_de_code_build_gist_src( $matches = array() ) {
 	$src = '';
@@ -171,7 +171,7 @@ function bout_de_code_build_gist_src( $matches = array() ) {
 }
 
 /**
- * Bout de Code embed handler callback.
+ * Bout de code embed handler callback.
  *
  * @since 1.0.0
  *

@@ -4,7 +4,7 @@
 import { createBlock } from '@wordpress/blocks';
 
 /**
- * Transforms for Bout de Code (Gist) embeds.
+ * Transforms for Bout de code (Gist) embeds.
  */
 const transforms = {
 	from: [

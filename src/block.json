@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/retraceur/ressources/refs/heads/main/schemas/block.json",
 	"apiVersion": 3,
 	"name": "imath/bout-de-code",
-	"title": "Bout de Code",
+	"title": "Bout de code",
 	"category": "embed",
 	"icon": "code",
 	"description": "Embed your Gists from Gist.GitHub.com into your Retraceur posts.",
