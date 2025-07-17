@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add logo & open graph repository image.
 - Add the `__nextHasNoMarginBottom` property to the Toggle control (Block's Edit script).
 - Add the `wp-block-embed-theme` style dependency.
 - Now uses @wordpress/scripts to generate the built block.
