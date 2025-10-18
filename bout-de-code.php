@@ -16,7 +16,7 @@
  * Author:             imath
  * Author URI:         https://imathi.eu
  * Requires Retraceur: 1.0.0
- * Up to Retraceur:    2.0.0-alpha
+ * Up to Retraceur:    2.0.0
  * Requires PHP:       5.6
  * Text Domain:        bout-de-code
  * License:            MIT License
