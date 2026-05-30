@@ -2,7 +2,7 @@
 
 ## Requirement:
 
-- [Retraceur](https://retraceur.github.io/about/) >= 1.0.0
+- [Retraceur](https://retraceur.github.io/) >= 1.0.0
 
 
 ## Description
