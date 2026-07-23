@@ -30,6 +30,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+:root {
+	--fontStack-monospace: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+	--fontStack-sansSerif: "Mona Sans VF", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	--fontStack-sansSerifDisplay: "Mona Sans VF", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	--fontStack-system: "Mona Sans VF", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	--text-title-size-small: .75rem;
+	--text-body-size-small: .75rem;
+	--borderWidth-thin: .0625rem;
+	--borderRadius-medium: .375rem;
+	--base-text-weight-normal: 400;
+	--base-text-weight-semibold: 600;
+}
+
 .wp-block-imath-bout-de-code {
 
 	.gist {
