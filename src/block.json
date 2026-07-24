@@ -8,7 +8,7 @@
 	"description": "Embed your Gists from Gist.GitHub.com into your Retraceur posts.",
 	"keywords": [ "Retraceur", "code", "gist", "embed" ],
 	"textdomain": "bout-de-code",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"attributes": {
 		"url": {
 			"type": "string"
