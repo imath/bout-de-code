@@ -12,12 +12,12 @@
  * Plugin URI:         https://github.com/imath/bout-de-code
  * Plugin Type:        block
  * Description:        Embed your Gists from Gist.GitHub.com into your Retraceur posts.
- * Version:            1.1.0
+ * Version:            1.2.0
  * Author:             imath
  * Author URI:         https://imathi.eu
- * Requires Retraceur: 1.0.0
- * Up to Retraceur:    2.0.0
- * Requires PHP:       5.6
+ * Requires Retraceur: 3.2.0
+ * Up to Retraceur:    4.0.0
+ * Requires PHP:       7.4
  * Text Domain:        bout-de-code
  * License:            MIT License
  * License URI:        https://github.com/imath/bout-de-code/blob/trunk/LICENSE.md
